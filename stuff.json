@@ -1,0 +1,243 @@
+{
+	"positions": [
+		{
+			"position": "Design Engineer",
+			"employer": "Revology Cars",
+			"role_tags": [
+				"3D Scanning",
+				"3D Printing",
+				"Data Acquisiton Module",
+				"CAN bus",
+				"Catia V5",
+				"Solidworks",
+				"Design X",
+				"Control X"
+			],
+			"roles": [
+				"Design and develop vehicle components, product fixtures, and test procedures using SOLIDWORKS and CATIA V5",
+				"Capture and assemble high-resolution 3D scans across all stages of component prototyping and vehicle production",
+				"Develop kinematic simulations to evaluate suspension geometry and detect interference under various driving conditions",
+				"Oversee utilization, configuration, upgrades, and maintenance of in-house 3D printer for rapid physical replication of prototype parts",
+				"Extreme owner for mechanical, electrical, and manufacturing design of classic-styled automatic transmission gear shifter that interfaces with modern transmissions—Revology’s first vehicle assembly being designed entirely in-house"
+			],
+			"achievement_tags": [
+				"3D Scanner",
+				"3D Printer",
+				"Data Acquisiton Module",
+				"CAN bus",
+				"Solidworks",
+				"PlatformIO",
+				"Dewesoft X",
+				"EasyEDA",
+				"C++",
+				"VBA"
+			],
+			"achievements": [
+				"Pioneered microcontroller-driven body control module with CAN bus integration that replaces mechanically-implemented circuits, reducing main wiring harness complexity by 34% and broadly enhancing the functional range of vehicle systems",
+				"Optimized paint baking process by augmenting oven times based on data analysis, ensuring unibodies reached target temperatures uniformly, reducing paint defects during assembly by 43%, and avoiding 14 hours of rework per vehicle",
+				"Developed cartesian hardpoint export system for data validation in 3D kinematic simulations using SOLIDWORKS visual basic scripting API, reducing translation time by 98% and eliminating potential for human error in data transcription"
+			],
+			"projects": [
+				{
+					"name": "Classic-to-Modern Shifter Adaptation",
+					"summary": "This is a placeholder summary for project 1.",
+					"description": "<div class='block'>Designed a classic-styled automatic transmission gear shifter for 1965-1968 Revology Mustang that interfaces natively with Revology's current production transmission, the Ford 10R80.</p>Responsibilities included:<ul><li>mechanical engineering and design</li><li>shifter indicator electrical logic diagramming and design</li><li>shifter indicator firmware programming</li><li>manufacturing process implementation</li></ul><div class='block'>This was Revology’s first vehicle component subassembly that was designed entirely in-house, with all parts being manufactured to Revology's specifications and no use of existing third-party replica components.</p>",
+					"project_tags": [
+						"3D Printer",
+						"3D Scanner",
+						"CAN bus",
+						"Microcontrollers",
+						"PCBs",
+						"CATIA",
+						"Design X",
+						"EasyEDA",
+						"PlatformIO",
+						"C++"
+					],
+					"media": [
+						{
+							"youtube": {
+								"url": "https://www.youtube.com/embed/si_kmQ5uotM?si=RWZS-Zj5pTJsrZ-D&amp;start=123",
+								"title": "T-handle Shifter Media Announcement",
+								"description": "Official Revology media debut for the T-handle shifter"
+							}
+						},
+						{
+							"image": {
+								"full": "CADing.png",
+								"thumbnail": "p1-thumb.jpg",
+								"background": "yes",
+								"title": "Computer-Aided Design",
+								"description": "Designing the CAD for the T-handle shifter in CATIA"
+							}
+						},
+						{
+							"image": {
+								"full": "scanning.jpg",
+								"thumbnail": "p3-thumb.jpg",
+								"title": "3D Scanning",
+								"description": "3D scanning a vehicle to validate prototype component fitment"
+							}
+						}
+					]
+				},
+				{
+					"name": "Electronic Control Module Integration",
+					"summary": "This is a placeholder summary for project 2.",
+					"description": "<div class='block'>I'm collaborating with an electrical engineer to overhaul the outdated wiring system in our classic Mustangs. Originally built with a simple wiring harness and basic relay/diode setups for things like light control, these cars had wiring tech that's really limited by today’s standards. Our aim is to centralize all body functions into a custom body control module (BCM) equipped with a microcontroller. We've programmed it to manage every actuator in the vehicle, which has let us simplify the wiring significantly.</div><div class='block'>With this setup, we've shifted control signals onto a twisted-pair CAN bus wiring system and added a small PCB with its own microcontroller at each control area (for example, a door now has its own module). This setup uses only two wires to manage all control and sensor data in each area, keeping the wiring grommets light and solving past limitations where we had to sacrifice functions due to wiring constraints.</div><div class='block'>We've also integrated PWM control, enabling adjustable brightness and soft fades on lighting components, adding a modern touch. Finally, I created a \"digital poke-yoke\" system for flashing our PCBs. By assigning each PCB a unique resistor value on one of the flash port’s unused pins, our flashing tool auto-detects the correct firmware for each component—BCM, door module, center console, etc.—to prevent accidental misflashing.</div>",
+					"project_tags": [
+						"3D Printer",
+						"CAN bus",
+						"Microcontrollers",
+						"PCBs",
+						"CATIA",
+						"EasyEDA",
+						"PlatformIO",
+						"C++",
+						"Python"
+					],
+					"media": [
+						{
+							"image": {
+								"full": "p2.jpg",
+								"thumbnail": "p2-thumb.jpg",
+								"background": "yes",
+								"description": "Placeholder image description4."
+							}
+						},
+						{
+							"image": {
+								"full": "door.png",
+								"thumbnail": "p2-thumb.jpg",
+								"background": "no",
+								"description": "Placeholder image description4."
+							}
+						}
+					]
+				},
+				{
+					"name": "Curing Oven Calibration and Optimization",
+					"summary": "This is a placeholder summary for project 3.",
+					"description": "This is a placeholder description for project 3. It provides a detailed overview of the project's scope and objectives.",
+					"project_tags": ["Data Acquisiton Module", "Excel", "Data Processing", "Dewesoft X"],
+					"media": [
+						{
+							"image": {
+								"full": "p3.jpg",
+								"thumbnail": "p3-thumb.jpg",
+								"background": "yes",
+								"description": "Placeholder image description5."
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"position": "Research Assistant",
+			"employer": "Interface Research Lab",
+			"role_tags": [],
+			"roles": [
+				"Oversaw the development of mobile applications tailored for retail businesses.",
+				"Managed a team of developers, designers, and QA testers."
+			],
+			"achievement_tags": [],
+			"achievements": [
+				"Led the team in a major project that resulted in a 50% reduction in customer complaints due to product issues.",
+				"Developed and executed a go-to-market strategy for three new applications."
+			],
+			"projects": [
+				{
+					"name": "IoT Architecture for Urban Wayfinding",
+					"long_name": "IoT Architecture for Enhancing Wayfinding and Accessibility in Smart Cities",
+					"summary": "This is a placeholder summary for project 4.",
+					"description": "<div class='block'>This was completed as part of my <a href='https://www.proquest.com/docview/2892641960' target='_blank'>Master's thesis</a> that explores the potential of the Internet of Things (IoT) in enhancing urban wayfinding, particularly for the blind and visually impaired.</div><div class='block'>Utilizing IoT's multi-layered architecture, smart cities deploy integrated sensors and devices to address urban challenges, with wayfinding as a key focus. While various accessible wayfinding methods have been explored, there exists a gap for more efficient solutions. Within this context, a collision warning system was developed for the visually impaired, integrated within a broader body sensor network framework.</div><div class='block'>Building on this, the study presented AWayNet, an RFID-based network, as a transformative solution. Simulations in the CARLA Simulator evaluated AWayNet across varied urban scenarios, revealing a need for only 8 individuals per city block for stable network functionality. When equipped with AWayNet, route completion times improved by 1.2x for well-sighted users and 2.5x for those with blurred vision. This research underscored the promise of IoT in fostering inclusive urban planning and paved the way for future research to refine AWayNet and expand simulation environments. </div>",
+					"project_tags": ["Python", "CARLA", "C++", "Unreal Engine", "OpenCV", "OCR", "Simuation"],
+					"media": []
+				},
+				{
+					"name": "ESPThirtyShoe",
+					"summary": "This is a placeholder summary for project 5.",
+					"description": "This is a placeholder description for project 5. It provides a detailed overview of the project's scope and objectives.",
+					"project_tags": ["Python", "Node.js", "WebSocket", "Ruby on Rails", "PostgreSQL", "Heroku"],
+					"media": []
+				},
+				{
+					"name": "Sonoff Shotgun",
+					"summary": "This is a placeholder summary for project 6.",
+					"description": "This is a placeholder description for project 6. It provides a detailed overview of the project's scope and objectives.",
+					"project_tags": ["Ruby on Rails", "PostgreSQL", "Heroku"],
+					"media": []
+				}
+			]
+		},
+		{
+			"position": "Combat Engineer",
+			"employer": "US Air Force Reserve",
+			"role_tags": [],
+			"roles": [
+				"Developed and maintained the website for the lab.",
+				"Designed and implemented a new website for the lab."
+			],
+			"achievement_tags": [],
+			"achievements": [],
+			"projects": [
+				{
+					"name": "Rapid Prototyping/Reverse Engineering Instructor",
+					"summary": "This is a placeholder summary for project 7.",
+					"description": "This is a placeholder description for project 7. It provides a detailed overview of the project's scope and objectives.",
+					"project_tags": ["Python", "Node.js", "WebSocket", "HTML5", "CSS3", "JavaScript"],
+					"media": []
+				},
+				{
+					"name": "Placeholder Project 8",
+					"summary": "This is a placeholder summary for project 8.",
+					"description": "This is a placeholder description for project 8. It provides a detailed overview of the project's scope and objectives.",
+					"project_tags": ["Python", "Node.js", "WebSocket", "HTML5", "CSS3", "JavaScript"],
+					"media": []
+				},
+				{
+					"name": "Placeholder Project 9",
+					"summary": "This is a placeholder summary for project 9.",
+					"description": "This is a placeholder description for project 9. It provides a detailed overview of the project's scope and objectives.",
+					"project_tags": ["Python", "Node.js", "WebSocket", "HTML5", "CSS3", "JavaScript"],
+					"media": []
+				}
+			]
+		},
+		{
+			"position": "'Technical Flexpert'",
+			"employer": "Myself",
+			"role_tags": [],
+			"roles": [
+				"Developed and maintained the website for the lab.",
+				"Designed and implemented a new website for the lab."
+			],
+			"achievement_tags": [],
+			"achievements": [],
+			"projects": [
+				{
+					"name": "Broke Boy Brita",
+					"summary": "This is a placeholder summary for project 10.",
+					"description": "This is a placeholder description for project 10. It provides a detailed overview of the project's scope and objectives.",
+					"project_tags": ["Python", "Node.js", "WebSocket", "HTML5", "CSS3", "JavaScript"],
+					"media": []
+				},
+				{
+					"name": "Whalen",
+					"summary": "This is a placeholder summary for project 11.",
+					"description": "This is a placeholder description for project 11. It provides a detailed overview of the project's scope and objectives.",
+					"project_tags": ["Python", "Node.js", "WebSocket", "HTML5", "CSS3", "JavaScript"],
+					"media": []
+				},
+				{
+					"name": "Placeholder Project 12",
+					"summary": "This is a placeholder summary for project 12.",
+					"description": "This is a placeholder description for project 12. It provides a detailed overview of the project's scope and objectives.",
+					"project_tags": ["Python", "Node.js", "WebSocket", "Node.js", "AWS Lambda", "API Gateway"],
+					"media": []
+				}
+			]
+		}
+	]
+}

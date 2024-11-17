@@ -1,0 +1,323 @@
+<!-- TODO: attempt recycling #top with .position and .employer and remove .active card -->
+<!-- TODO: fix margins of all primary divs -->
+<!-- TODO: figure out scrollbar skinning for Windows (and Mac, i guess) -->
+<!-- TODO: figure out font inconsistencies between windows and Mac -->
+<!-- TODO: figure out proper height of x-axis edge gradient on #cards -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Myles Keller</title>
+		<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="icon" href="favicon.svg" />
+		<link rel="”mask-icon”" href="favicon.svg”" color="#000000" />
+		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+		<script type="module" src="script.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	</head>
+	<body>
+		<header>
+			<nav id="navbar" class="navbar">
+				<div class="navbar-brand">
+					<button id="filter" class="button is-text navbar-item">
+						<span class="icon is-medium">
+							<!-- <i class="fa-lg fa-solid fa-bars-filter active"></i>
+							<i class="fa-lg fa-solid fa-left-from-bracket"></i> -->
+							<i class="fa-lg fa-solid fa-bars active"></i>
+							<i class="fa-lg fa-solid fa-bars"></i>
+						</span>
+					</button>
+					<a class="navbar-item button is-text has-text-weight-semibold" href="./">
+						<i class="fa fa-regular fa-dumpster-fire"></i>MylesKeller</a
+					>
+				</div>
+
+				<div class="navbar-menu">
+					<div class="navbar-start"></div>
+
+					<div class="navbar-item">
+						<button type="button" id="ui_button" class="button is-text hidden">
+							<span class="icon is-large">
+								<i class="fa-lg fa-solid fa-chevrons-up"></i>
+							</span>
+						</button>
+					</div>
+
+					<div class="navbar-end">
+						<div class="navbar-item">
+							<div class="buttons">
+								<!-- <button type="button" id="bg_toggle" class="button is-primary is-icon">
+									<span class="icon is-medium">
+										<i class="fa fa-lg fa-image"></i>
+									</span>
+								</button> -->
+
+								<button type="button" id="dark_toggle" class="button">
+									<span class="icon is-medium">
+										<i class="fa fa-lg fa-moon active"></i>
+										<i class="fa fa-lg fa-sun"></i>
+									</span>
+								</button>
+
+								<div class="dropdown is-right" id="resume_dropdown">
+									<div class="dropdown-trigger">
+										<button
+											type="button"
+											class="button is-primary"
+											id="resume_button"
+											aria-haspopup="true"
+											aria-controls="dropdown-menu1">
+											<span><strong>Résumé</strong></span>
+											<span class="icon is-small">
+												<i class="fa fa-angle-down" aria-hidden="true"></i>
+											</span>
+										</button>
+									</div>
+									<div class="dropdown-menu" id="dropdown-menu1" role="menu">
+										<div class="dropdown-content">
+											<a href="#" class="dropdown-item"><i class="fa-solid fa-explosion">&nbsp;</i>Defense</a>
+											<a href="#" class="dropdown-item"> <i class="fa-solid fa-car-side"> &nbsp;</i>Automotive</a>
+											<a href="#" class="dropdown-item"><i class="fa-solid fa-dna">&nbsp;</i>Biomedical</a>
+											<a href="#" class="dropdown-item"
+												><i class="fa-solid fa-industry-windows">&nbsp;</i>Manufacturing</a
+											>
+											<a href="#" class="dropdown-item"><i class="fa-solid fa-skull-crossbones">&nbsp;</i>Software</a>
+											<!-- <a href="#" class="dropdown-item level"><div class="level-left"><div class="level-item">Software</div></div><div class="level-right"><i class="level-item fa-solid fa-download"></i></div></a> -->
+											<hr class="dropdown-divider" />
+											<a href="#" class="dropdown-item">General (CV)</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="dropdown is-right" id="contact_dropdown">
+									<div class="dropdown-trigger">
+										<button
+											type="button"
+											class="button is-primary"
+											id="contact_button"
+											aria-haspopup="true"
+											aria-controls="dropdown-menu2">
+											<span><strong>Contact</strong></span>
+											<span class="icon is-small">
+												<i class="fas fa-angle-down" aria-hidden="true"></i>
+											</span>
+										</button>
+									</div>
+									<div class="dropdown-menu" id="dropdown-menu2" role="menu">
+										<div class="dropdown-content">
+											<a id="ferHsserddaLiamE" class="dropdown-item">
+												<i class="fa-lg fa-solid fa-envelope"></i>
+												<code id="sserddaLiamE"></code>
+											</a>
+											<!-- <hr class="dropdown-divider" /> -->
+											<a id="ferHrebmuNenohP" class="dropdown-item">
+												<i class="fa-lg fa-solid fa-phone"></i> <code id="rebmuNenohP"></code>
+											</a>
+											<!-- <hr class="dropdown-divider" /> -->
+											<a id="ferHnIdekniL" class="dropdown-item"
+												><i class="fa-lg fa-brands fa-linkedin"></i><code id="nIdekniL"></code
+											></a>
+											<!-- <hr class="dropdown-divider" /> -->
+											<a id="ferHbuHtiG" class="dropdown-item"
+												><i class="fa-lg fa-brands fa-github"></i><code id="buHtiG"></code
+											></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<div id="container">
+			<nav class="box menu hidden" id="sidebar">
+				<p class="menu-label">Technologies</p>
+				<ul class="menu-list">
+					<li class="tags hw"></li>
+				</ul>
+				<p class="menu-label">Software</p>
+				<ul class="menu-list">
+					<li class="tags sw"></li>
+				</ul>
+				<p class="menu-label">Languages</p>
+				<ul class="menu-list">
+					<li class="tags languages"></li>
+				</ul>
+			</nav>
+
+			<div id="main" class="top">
+				<div id="top" class="box content">
+					<h1>Well here we are.</h1>
+					<p>
+						I suppose this website is my opportunity to give you a peek into what I do in the context of engineering.
+						And yes, I coded <em>every bit</em> of it myself, so let’s just focus on the content and maybe skip judging
+						the unoptimized source code.
+					</p>
+					<p>
+						I'm Myles Keller, an engineer with a passion for creating solutions that fuse software and hardware. My
+						journey includes vehicle system development for a small automotive manufacturer, hands-on experience with
+						fabrication and rapid prototyping, academic research in fields like the Internet of Things, 3D kinematics,
+						and simulation modeling, as well as fifteen years in the military.
+					</p>
+					<p>
+						These experiences shape my approach to complex systems design, allowing me to bridge mechanical, electrical,
+						and computer engineering with a practical mindset and an eye for modern challenges.
+					</p>
+					<blockquote>
+						Design engineer by trade, computer engineer by degree, multidisciplinary engineer by self-proclamation.
+					</blockquote>
+				</div>
+
+				<div id="cards" class="field is-grouped scrollbar"></div>
+				<div class="fade-overlay right"></div>
+				<div class="fade-overlay left"></div>
+				<div id="bottom" class="scrollable-parent box content hidden"></div>
+			</div>
+		</div>
+		<!-- <div id="animated_bg" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1"> -->
+		<!-- <svg
+				xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink"
+				viewBox="0 0 500 350"
+				preserveAspectRatio="xMidYMid slice"
+				style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; shape-rendering: auto">
+				<g>
+					<linearGradient y2="1" y1="0" x2="0" x1="0" id="lg-rzfb6sjvxvb-0">
+						<stop offset="0" stop-color="#081c54"></stop>
+						<stop offset="1" stop-color="#225ea8"></stop>
+					</linearGradient>
+					<linearGradient y2="1" y1="0" x2="0" x1="0" id="lg-rzfb6sjvxvb-1">
+						<stop offset="0" stop-color="#225ea8"></stop>
+						<stop offset="1" stop-color="#1d91c0"></stop>
+					</linearGradient>
+					<linearGradient y2="1" y1="0" x2="0" x1="0" id="lg-rzfb6sjvxvb-2">
+						<stop offset="0" stop-color="#1d91c0"></stop>
+						<stop offset="1" stop-color="#41b6c4"></stop>
+					</linearGradient>
+					<linearGradient y2="1" y1="0" x2="0" x1="0" id="lg-rzfb6sjvxvb-3">
+						<stop offset="0" stop-color="#41b6c4"></stop>
+						<stop offset="1" stop-color="#7fcdbb"></stop>
+					</linearGradient>
+					<linearGradient y2="1" y1="0" x2="0" x1="0" id="lg-rzfb6sjvxvb-4">
+						<stop offset="0" stop-color="#7fcdbb"></stop>
+						<stop offset="1" stop-color="#c7e9b4"></stop>
+					</linearGradient>
+					<linearGradient y2="1" y1="0" x2="0" x1="0" id="lg-rzfb6sjvxvb-5">
+						<stop offset="0" stop-color="#c7e9b4"></stop>
+						<stop offset="1" stop-color="#f3f8cf"></stop>
+					</linearGradient>
+					<linearGradient y2="1" y1="0" x2="0" x1="0" id="lg-rzfb6sjvxvb-6">
+						<stop offset="0" stop-color="#f3f8cf"></stop>
+						<stop offset="1" stop-color="#081c54"></stop>
+					</linearGradient>
+					<path
+						fill-opacity="0.88"
+						fill="url(#lg-rzfb6sjvxvb-0)"
+						d="M0 0L0 326.82Q50 324.27 100 289.99T200 273.51T300 239.57T400 228.48T500 197.91L500 0Z">
+						<animate
+							values="M0 0L0 326.82Q50 324.27 100 289.99T200 273.51T300 239.57T400 228.48T500 197.91L500 0Z;M0 0L0 314.50Q50 306.52 100 290.46T200 277.46T300 233.25T400 239.33T500 220.59L500 0Z;M0 0L0 304.70Q50 339.69 100 303.01T200 286.37T300 233.20T400 241.35T500 200.04L500 0Z;M0 0L0 326.82Q50 324.27 100 289.99T200 273.51T300 239.57T400 228.48T500 197.91L500 0Z"
+							begin="0s"
+							keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"
+							calcMode="spline"
+							keyTimes="0;0.333;0.667;1"
+							repeatCount="indefinite"
+							dur="10s"
+							attributeName="d"></animate>
+					</path>
+					<path
+						fill-opacity="0.88"
+						fill="url(#lg-rzfb6sjvxvb-1)"
+						d="M0 0L0 253.99Q50 268.65 100 253.65T200 230.98T300 194.71T400 192.92T500 157.96L500 0Z">
+						<animate
+							values="M0 0L0 253.99Q50 268.65 100 253.65T200 230.98T300 194.71T400 192.92T500 157.96L500 0Z;M0 0L0 290.96Q50 278.77 100 242.38T200 220.48T300 218.21T400 207.66T500 193.74L500 0Z;M0 0L0 281.47Q50 314.92 100 272.98T200 254.33T300 210.86T400 183.45T500 168.95L500 0Z;M0 0L0 253.99Q50 268.65 100 253.65T200 230.98T300 194.71T400 192.92T500 157.96L500 0Z"
+							begin="-1.6666666666666667s"
+							keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"
+							calcMode="spline"
+							keyTimes="0;0.333;0.667;1"
+							repeatCount="indefinite"
+							dur="10s"
+							attributeName="d"></animate>
+					</path>
+					<path
+						fill-opacity="0.88"
+						fill="url(#lg-rzfb6sjvxvb-2)"
+						d="M0 0L0 229.73Q50 240.87 100 213.54T200 209.44T300 188.93T400 181.66T500 151.37L500 0Z">
+						<animate
+							values="M0 0L0 229.73Q50 240.87 100 213.54T200 209.44T300 188.93T400 181.66T500 151.37L500 0Z;M0 0L0 231.35Q50 248.49 100 207.23T200 188.59T300 197.12T400 171.83T500 156.39L500 0Z;M0 0L0 219.87Q50 255.47 100 211.06T200 201.81T300 181.32T400 175.86T500 135.95L500 0Z;M0 0L0 229.73Q50 240.87 100 213.54T200 209.44T300 188.93T400 181.66T500 151.37L500 0Z"
+							begin="-3.3333333333333335s"
+							keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"
+							calcMode="spline"
+							keyTimes="0;0.333;0.667;1"
+							repeatCount="indefinite"
+							dur="10s"
+							attributeName="d"></animate>
+					</path>
+					<path
+						fill-opacity="0.88"
+						fill="url(#lg-rzfb6sjvxvb-3)"
+						d="M0 0L0 184.42Q50 239.94 100 195.64T200 154.88T300 140.22T400 157.06T500 142.79L500 0Z">
+						<animate
+							values="M0 0L0 184.42Q50 239.94 100 195.64T200 154.88T300 140.22T400 157.06T500 142.79L500 0Z;M0 0L0 197.25Q50 231.72 100 199.60T200 154.99T300 148.36T400 143.16T500 134.61L500 0Z;M0 0L0 170.58Q50 202.64 100 178.96T200 171.42T300 138.41T400 137.83T500 126.61L500 0Z;M0 0L0 184.42Q50 239.94 100 195.64T200 154.88T300 140.22T400 157.06T500 142.79L500 0Z"
+							begin="-5s"
+							keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"
+							calcMode="spline"
+							keyTimes="0;0.333;0.667;1"
+							repeatCount="indefinite"
+							dur="10s"
+							attributeName="d"></animate>
+					</path>
+					<path
+						fill-opacity="0.88"
+						fill="url(#lg-rzfb6sjvxvb-4)"
+						d="M0 0L0 150.58Q50 211.15 100 162.89T200 126.18T300 122.14T400 100.20T500 109.05L500 0Z">
+						<animate
+							values="M0 0L0 150.58Q50 211.15 100 162.89T200 126.18T300 122.14T400 100.20T500 109.05L500 0Z;M0 0L0 161.16Q50 177.11 100 148.55T200 112.29T300 112.75T400 124.01T500 85.74L500 0Z;M0 0L0 153.57Q50 163.79 100 132.20T200 149.35T300 116.06T400 92.82T500 80.68L500 0Z;M0 0L0 150.58Q50 211.15 100 162.89T200 126.18T300 122.14T400 100.20T500 109.05L500 0Z"
+							begin="-6.666666666666667s"
+							keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"
+							calcMode="spline"
+							keyTimes="0;0.333;0.667;1"
+							repeatCount="indefinite"
+							dur="10s"
+							attributeName="d"></animate>
+					</path>
+					<path
+						fill-opacity="0.88"
+						fill="url(#lg-rzfb6sjvxvb-5)"
+						d="M0 0L0 127.66Q50 127.90 100 88.75T200 113.55T300 94.71T400 75.05T500 70.17L500 0Z">
+						<animate
+							values="M0 0L0 127.66Q50 127.90 100 88.75T200 113.55T300 94.71T400 75.05T500 70.17L500 0Z;M0 0L0 93.92Q50 158.91 100 122.18T200 89.58T300 92.11T400 99.66T500 56.80L500 0Z;M0 0L0 124.44Q50 118.81 100 99.53T200 111.79T300 74.99T400 70.18T500 80.69L500 0Z;M0 0L0 127.66Q50 127.90 100 88.75T200 113.55T300 94.71T400 75.05T500 70.17L500 0Z"
+							begin="-8.333333333333334s"
+							keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"
+							calcMode="spline"
+							keyTimes="0;0.333;0.667;1"
+							repeatCount="indefinite"
+							dur="10s"
+							attributeName="d"></animate>
+					</path>
+					<g></g>
+				</g>
+			</svg> -->
+		<!-- </div> -->
+
+		<div id="media-carousel-modal" class="modal">
+			<div class="modal-background"></div>
+			<div class="modal-content">
+				<div class="columns modal-images"></div>
+			</div>
+			<button class="modal-close is-large" aria-label="close"></button>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,637 @@
+:root {
+	--top-bottom-height: 66.666%;
+	--cards-height: 33.333%;
+	--cards-min-height: 10rem;
+	--sidebar-min-width: 15rem;
+	--sidebar-max-width: 20rem;
+	--card-max-width: 19rem;
+	--card-min-width: 15rem;
+	--card-width: 19rem;
+	--animation-speed: 294ms;
+	--header-padding: 1rem;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.swiper {
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-slide {
+	overflow: hidden;
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+#carousel {
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	transition: background-image 1s ease-in-out;
+	/* Smooth transition between images */
+	cursor: default;
+}
+
+.pagination-dots {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	outline: 2px solid;
+	outline-color: var(--bulma-background);
+	/* width, style, color */
+	margin: 0 5px;
+	cursor: pointer;
+	background-color: hsla(var(--bulma-text-h), var(--bulma-text-s), var(--bulma-text-l), 0.5);
+}
+
+.dot.is-active {
+	background-color: var(--bulma-text-strong) !important;
+	transform: scale(1.2);
+}
+
+.column.image.modal-image .card {
+	overflow: hidden;
+}
+
+.dynamic-width {
+	display: inline-block;
+	white-space: normal;
+	/* Allows content to wrap inside */
+}
+
+.hidden-measure {
+	visibility: hidden;
+	white-space: nowrap;
+	position: absolute;
+	pointer-events: none;
+	z-index: -1;
+}
+
+.outfit-bold {
+	font-family: 'Outfit', sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-style: normal;
+}
+
+.outfit-regular {
+	font-family: 'Outfit', sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+
+body,
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: 'Outfit', sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+
+.summary {
+	display: none;
+}
+
+html,
+body {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.box,
+.flip-card {
+	background-color: hsla(var(--bulma-scheme-h), var(--bulma-scheme-s), var(--bulma-scheme-main-l), 0.95) !important;
+}
+
+.content h2,
+.columns:not(:last-child) {
+	margin-bottom: 0;
+}
+
+.content ul {
+	margin-top: 0;
+}
+
+.project_skills,
+.achievement_tags,
+.role_tags {
+	padding-top: calc(var(--bulma-block-spacing) * 0.25);
+	padding-bottom: calc(var(--bulma-block-spacing) * 0.25);
+}
+
+.role_skills,
+.achievement_skills,
+.project_skills {
+	top: 0.25rem;
+	position: relative;
+}
+
+.dropdown-item.level {
+	margin-bottom: 0;
+}
+
+.navbar {
+	background-color: transparent !important;
+}
+
+#container {
+	flex-grow: 1;
+	display: flex;
+	height: calc(100vh - (var(--bulma-navbar-height) + var(--bulma-block-spacing) * 3));
+}
+
+#sidebar {
+	min-width: var(--sidebar-min-width);
+	max-width: var(--sidebar-max-width);
+	position: relative;
+	border-color: var(--bulma-border);
+	border-radius: var(--bulma-radius-large);
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	border-style: solid;
+	border-width: 1px;
+	transform: translate3d(0, 0, 0);
+	/* performance benefits? */
+	overflow: hidden;
+	margin-bottom: var(--bulma-block-spacing);
+}
+
+#sidebar>p.panel-heading {
+	background-color: transparent;
+	color: hsl(var(--bulma-text-h), var(--bulma-text-s), var(--bulma-text-title-l));
+}
+
+#sidebar.hidden {
+	width: 0;
+	min-width: 0;
+	max-width: 0;
+	padding: 0;
+	transform: translate3d(0, 0, 0) translateX(calc(var(--sidebar-width) * -1));
+	/* Preserve 3D transform */
+	margin-right: 0;
+	border: none;
+}
+
+#main {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	margin-left: var(--bulma-block-spacing);
+	margin-right: var(--bulma-block-spacing);
+	margin-bottom: var(--bulma-block-spacing);
+}
+
+#top.hidden,
+#bottom.hidden {
+	box-shadow: none;
+	max-height: 0;
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+#top,
+#bottom {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	transition: max-height var(--animation-speed) ease-out;
+	border-color: var(--bulma-border);
+	border-radius: var(--bulma-radius-large);
+	border-style: solid;
+	border-width: 1px;
+	overflow: hidden;
+	box-shadow: var(--bulma-box-shadow);
+}
+
+.scrollable-parent {
+	margin-top: var(--bulma-block-spacing);
+	/* margin-bottom: var(--bulma-block-spacing); */
+	/* overflow-y: auto; */
+	overflow: hidden;
+	position: relative;
+	padding-top: calc(var(--bulma-block-spacing) * -1);
+	padding-bottom: calc(var(--bulma-block-spacing) * -1);
+}
+
+.scrollable {
+	padding-top: var(--bulma-block-spacing);
+	padding-bottom: var(--bulma-block-spacing);
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	position: relative;
+	z-index: 1;
+	/* Ensure the scrollable content is above the gradient pseudo-elements */
+}
+
+.gradient {
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: var(--bulma-block-spacing);
+	pointer-events: none;
+	/* Ensure the gradient bars do not interfere with scrolling */
+	z-index: 2;
+	/* Ensure the gradient bars are above the content */
+}
+
+.gradient-top {
+	top: 0;
+	/* background: linear-gradient(to bottom, var(--bulma-scheme-main), transparent); */
+	background-image: linear-gradient(to top,
+			hsla(var(--bulma-scheme-h), var(--bulma-scheme-s), var(--bulma-scheme-main-l), 0) 0%,
+			hsla(var(--bulma-scheme-h), var(--bulma-scheme-s), var(--bulma-scheme-main-l), 1) 75%,
+			hsla(var(--bulma-scheme-h), var(--bulma-scheme-s), var(--bulma-scheme-main-l), 1) 100%);
+}
+
+.gradient-bottom {
+	bottom: 0;
+	/* background: linear-gradient(to top, var(--bulma-scheme-main), transparent); */
+	background-image: linear-gradient(to bottom,
+			hsla(var(--bulma-scheme-h), var(--bulma-scheme-s), var(--bulma-scheme-main-l), 0) 0%,
+			hsla(var(--bulma-scheme-h), var(--bulma-scheme-s), var(--bulma-scheme-main-l), 1) 75%,
+			hsla(var(--bulma-scheme-h), var(--bulma-scheme-s), var(--bulma-scheme-main-l), 1) 100%);
+}
+
+#main,
+#bottom {
+	width: calc(100vw - var(--sidebar-min-width) - var(--bulma-block-spacing) * 2);
+}
+
+header {
+	align-items: center;
+	display: flex;
+	padding-top: var(--bulma-block-spacing);
+	padding-bottom: var(--bulma-block-spacing);
+	margin-bottom: var(--bulma-block-spacing);
+	padding-left: calc(var(--bulma-column-gap) + 0.75rem);
+	/* manually bumped out for visual symmetry */
+	padding-right: var(--bulma-column-gap);
+	z-index: calc(42069 - 1);
+}
+
+.fade-overlay {
+	position: absolute;
+	bottom: var(--bulma-column-gap);
+	width: calc(var(--bulma-column-gap) * 4);
+	height: calc(var(--cards-height) - var(--bulma-column-gap) * 2);
+	transition: opacity 0.5s ease, visibility 0.5s ease;
+	/* Smooth transitions for opacity and visibility */
+	opacity: 1;
+	visibility: visible;
+	pointer-events: none;
+}
+
+.fade-overlay.right {
+	right: 0;
+	background-image: linear-gradient(to right,
+			hsla(var(--bulma-scheme-h), var(--bulma-scheme-s), var(--bulma-scheme-main-l), 0) 0%,
+			hsla(var(--bulma-scheme-h), var(--bulma-scheme-s), var(--bulma-scheme-main-l), 1) 50%,
+			hsla(var(--bulma-scheme-h), var(--bulma-scheme-s), var(--bulma-scheme-main-l), 1) 100%);
+}
+
+.fade-overlay.left {
+	/* left: 0; */
+	/* this may not work in all situations */
+	left: calc(var(--sidebar-width) + var(--bulma-column-gap) * (3 - 2));
+	background-image: linear-gradient(to left,
+			hsla(var(--bulma-scheme-h), var(--bulma-scheme-s), var(--bulma-scheme-main-l), 0) 0%,
+			hsla(var(--bulma-scheme-h), var(--bulma-scheme-s), var(--bulma-scheme-main-l), 1) 50%,
+			hsla(var(--bulma-scheme-h), var(--bulma-scheme-s), var(--bulma-scheme-main-l), 1) 100%);
+}
+
+.fade-overlay.top {
+	bottom: auto;
+	top: calc(var(--bulma-navbar-height) + var(--header-padding) + var(--header-padding));
+}
+
+.fade-overlay.left.top {
+	left: calc(var(--sidebar-width) + var(--bulma-column-gap) * (3 - 2));
+}
+
+.fade-overlay.hidden {
+	opacity: 0;
+	visibility: hidden;
+}
+
+#cards {
+	height: var(--cards-height);
+	min-height: var(--cards-height);
+	overflow-x: auto;
+	margin-bottom: 0;
+	gap: calc(var(--bulma-block-spacing) * 2);
+}
+
+h1.title.name {
+	filter: drop-shadow(2px 2px 5px hsla(calc(var(--bulma-scheme-h) + 180), var(--bulma-scheme-s), var(--bulma-scheme-main-l), 0.75));
+}
+
+.flip-card {
+	display: inline-block;
+	white-space: nowrap;
+	/* Prevents the container from wrapping */
+	min-width: var(--card-min-width);
+	width: var(--card-width);
+	max-width: var(--card-max-width);
+	transition: transform var(--animation-speed);
+	/* flip animation stuff */
+	transition-duration: var(--bulma-duration);
+	transform-style: preserve-3d;
+	/* flip animation stuff */
+	position: relative;
+	/* flip animation stuff */
+	margin-inline: var(--bulma-column-gap);
+	margin-bottom: 0 !important;
+	border-color: var(--bulma-border);
+	border-radius: calc(var(--bulma-radius-large) * 1.05);
+	/* mostly fixes weird inconsistency with .card-back */
+	border-style: solid;
+	border-width: 1px;
+	flex-basis: auto;
+	flex-grow: 0;
+	flex-shrink: 0;
+	white-space: normal !important;
+	text-align: left !important;
+	padding: 0px !important;
+	max-width: 100%;
+	cursor: pointer;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
+.expand {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	padding-left: var(--bulma-button-padding-vertical);
+	padding-right: var(--bulma-button-padding-vertical);
+}
+
+.expand::before {
+	content: '\f065';
+	font-family: 'Font Awesome 6 Pro';
+	font-weight: 900;
+	font-size: 1rem;
+	display: inline-block;
+	text-align: center;
+	line-height: 1.25rem;
+}
+
+.modal-background .pagination-dots {
+	margin: var(--bulma-block-spacing);
+}
+
+.modal-background {
+	background-color: hsla(calc(var(--bulma-scheme-h) + 180),
+			var(--bulma-scheme-s),
+			var(--bulma-scheme-main-l),
+			0.86) !important;
+}
+
+.modal-images {
+	transition: transform calc(var(--animation-speed) * 1) ease-out;
+	overflow-x: scroll;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+}
+
+.modal-content {
+	overflow: visible !important;
+}
+
+.modal-image {
+	min-width: 100%;
+	transition: opacity 0.5s;
+	transition: transform 1s ease;
+	scroll-snap-align: start;
+}
+
+.card-overlay {
+	background-size: cover;
+}
+
+.card-overlay::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: var(--bulma-radius-large);
+	border-style: solid;
+	border-width: 1px;
+	border-color: transparent;
+	width: 100%;
+	width: 100%;
+	height: 100%;
+	background: hsla(calc(var(--bulma-scheme-h) + 180), var(--bulma-scheme-s), var(--bulma-scheme-main-l), 0.5);
+	transition: background-color calc(var(--animation-speed) / 2) ease;
+	pointer-events: none;
+}
+
+.card-overlay:hover::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: var(--bulma-radius-large);
+	border-style: solid;
+	border-width: 1px;
+	border-color: transparent;
+	width: 100%;
+	height: 100%;
+	background: hsla(calc(var(--bulma-scheme-h) + 180), var(--bulma-scheme-s), var(--bulma-scheme-main-l), 0.375);
+}
+
+.flip-card.current_project .card-back .title,
+.flip-card.current_project .card-back .tags {
+	display: none;
+}
+
+.flip-card .card-back .title,
+.flip-card .card-back .tags {
+	display: block;
+}
+
+.flip-card .card-face {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	/* Hides the back side of the element when it is not facing the screen */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flip-card .card-front {
+	transform: rotateY(0deg);
+	/* Ensures the card is showing the front*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: calc(var(--bulma-block-spacing) * 4);
+}
+
+.flip-card.back,
+.flip-card .card-back {
+	transform: rotateY(180deg);
+	padding: calc(var(--bulma-block-spacing) * 2);
+}
+
+.card-back {
+	/* border-radius: calc(var(--bulma-radius-large) * 0.99); */
+	border-radius: var(--bulma-radius-large);
+}
+
+.flip-card:hover {
+	background-color: var(--bulma-background) !important;
+	color: var(--bulma-text-strong) !important;
+}
+
+#navbar {
+	flex-grow: 1;
+	padding: var(--py) var(--px);
+	height: var(--bulma-navbar-height);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 42069;
+}
+
+.is-text {
+	text-decoration: none !important;
+}
+
+#ui_button {
+	position: relative;
+	transition: transform calc(var(--animation-speed) * 1.5) ease-out;
+}
+
+#ui_button.hidden {
+	transform: translateY(calc(var(--bulma-navbar-height) * -2));
+}
+
+#dark_toggle,
+#filter {
+	position: relative;
+	/* Make sure the button is the relative container */
+	display: flex;
+	/* Use flex to center the icons horizontally and vertically */
+	justify-content: center;
+	align-items: center;
+}
+
+#dark_toggle i,
+#filter i {
+	position: absolute;
+	transition: opacity calc(var(--animation-speed) * 0.5) ease, transform calc(var(--animation-speed) * 0.5) ease;
+	opacity: 0;
+	/* Start icons as invisible */
+	transform: scale(0.5);
+	/* Start icons smaller */
+	display: inline-block;
+	/* Ensures transform applies correctly */
+}
+
+#dark_toggle i.active,
+#filter i.active {
+	opacity: 1;
+	transform: scale(1);
+	/* Scale to normal size */
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.tag {
+	opacity: 0;
+	/* Start hidden */
+	animation: fadeIn 0.5s ease forwards;
+	/* The animation */
+}
+
+.scrollbar {
+	overflow: overlay;
+	scrollbar-gutter: stable;
+}
+
+/* total width */
+.scrollbar::-webkit-scrollbar {
+	background-color: rgba(0, 0, 0, 0);
+	width: 8px;
+	height: 8px;
+	z-index: 999999;
+}
+
+/* background of the scrollbar except button or resizer */
+.scrollbar::-webkit-scrollbar-track {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+/* scrollbar itself */
+.scrollbar::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0);
+	border-radius: 8px;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.scrollbar::-webkit-scrollbar-button {
+	display: none;
+}
+
+/* scrollbar when element is hovered */
+.scrollbar:hover::-webkit-scrollbar-thumb {
+	background-color: #a0a0a5;
+}
+
+/* scrollbar when scrollbar is hovered */
+.scrollbar::-webkit-scrollbar-thumb:hover {
+	background-color: #a0a0a5;
+}
+
+header,
+nav,
+#main,
+#bottom,
+#top,
+#cards,
+#sidebar,
+.flip-card {
+	/* border: 1px solid red; */
+}
